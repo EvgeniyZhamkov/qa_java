@@ -1,5 +1,6 @@
 import com.example.Feline;
 import com.example.Lion;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -34,6 +35,13 @@ public class LionTest {
         when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         Lion lion = new Lion("Самец",feline);
         assertEquals(List.of("Животные", "Птицы", "Рыба"),lion.getFood());
+    }
+
+    @Test
+    public void otherSexExceptionShouldReturnUnknownSexLionMessageString() {
+        String expectedString = "Используйте допустимые значения пола животного - самец или самка";
+        Exception exception = Assert.assertThrows(Exception.class, () -> new Lion("Котенок", feline));
+        Assert.assertEquals(expectedString, exception.getMessage());
     }
 
 }
