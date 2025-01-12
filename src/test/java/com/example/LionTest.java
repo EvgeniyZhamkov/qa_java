@@ -23,9 +23,9 @@ public class LionTest {
     @Test
     public void getKittensTest() throws Exception {
 
-        when(feline.getKittens()).thenReturn(5);
+        when(feline.getKittens()).thenReturn(1);
         Lion lion = new Lion("Самка",feline);
-        assertEquals(5,lion.getKittens());
+        assertEquals(1,lion.getKittens());
 
     }
 

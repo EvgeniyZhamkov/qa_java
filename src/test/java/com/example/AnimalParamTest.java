@@ -29,6 +29,6 @@ public class AnimalParamTest {
     @Test
     public void FoodTest() throws Exception {
         Animal animal = new Animal();
-        Assert.assertEquals(expectedFood, animal.getFood(animalKindType));
+        Assert.assertEquals("Список еды для животных не совпадает с ожидаемым", expectedFood, animal.getFood(animalKindType));
     }
 }
